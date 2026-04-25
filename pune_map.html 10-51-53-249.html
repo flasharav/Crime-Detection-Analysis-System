@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6772dbbe4daf428d522aebf7ad12f6eb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    <div style="position:fixed;bottom:30px;left:30px;z-index:9999;
+background:white;padding:12px;border:2px solid grey;border-radius:8px;font-size:14px">
+<b>Crime Zone Legend</b><br>
+<span style="color:red">●</span> High Crime<br>
+<span style="color:orange">●</span> Medium Crime<br>
+<span style="color:green">●</span> Low Crime</div>
+    
+            <div class="folium-map" id="map_6772dbbe4daf428d522aebf7ad12f6eb" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6772dbbe4daf428d522aebf7ad12f6eb = L.map(
+                "map_6772dbbe4daf428d522aebf7ad12f6eb",
+                {
+                    center: [18.5204, 73.8567],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0e50f28ec5c3c99e1ba0a56bacc9d4e2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0e50f28ec5c3c99e1ba0a56bacc9d4e2.addTo(map_6772dbbe4daf428d522aebf7ad12f6eb);
+        
+    
+            var circle_a440b3d409a46d372419f770d1fc14d5 = L.circle(
+                [18.5325915, 73.8513115],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1280, "stroke": true, "weight": 3}
+            ).addTo(map_6772dbbe4daf428d522aebf7ad12f6eb);
+        
+    
+        var popup_b0b0b0807b2d49afc0713b147141b679 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6a2facb5b41398c78723aa2108728f88 = $(`<div id="html_6a2facb5b41398c78723aa2108728f88" style="width: 100.0%; height: 100.0%;"><b>Shivajinagar</b><br>Crime Count: 64<br>Zone: <b>Low Crime</b></div>`)[0];
+                popup_b0b0b0807b2d49afc0713b147141b679.setContent(html_6a2facb5b41398c78723aa2108728f88);
+            
+        
+
+        circle_a440b3d409a46d372419f770d1fc14d5.bindPopup(popup_b0b0b0807b2d49afc0713b147141b679)
+        ;
+
+        
+    
+    
+            circle_a440b3d409a46d372419f770d1fc14d5.bindTooltip(
+                `<div>
+                     Shivajinagar — Low Crime
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_908295fef36daa84d8412219af1d2291 = L.circle(
+                [18.5071358, 73.8050987],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8300, "stroke": true, "weight": 3}
+            ).addTo(map_6772dbbe4daf428d522aebf7ad12f6eb);
+        
+    
+        var popup_175fd9aab64af20ae714a2bbd7b1e3fc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3424540e9830f335a260e3fd6d25e7f1 = $(`<div id="html_3424540e9830f335a260e3fd6d25e7f1" style="width: 100.0%; height: 100.0%;"><b>Kothrud</b><br>Crime Count: 415<br>Zone: <b>High Crime</b></div>`)[0];
+                popup_175fd9aab64af20ae714a2bbd7b1e3fc.setContent(html_3424540e9830f335a260e3fd6d25e7f1);
+            
+        
+
+        circle_908295fef36daa84d8412219af1d2291.bindPopup(popup_175fd9aab64af20ae714a2bbd7b1e3fc)
+        ;
+
+        
+    
+    
+            circle_908295fef36daa84d8412219af1d2291.bindTooltip(
+                `<div>
+                     Kothrud — High Crime
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_0d7e9c544a5f68896a71c210819c2e86 = L.circle(
+                [18.5007741, 73.9379146],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3620, "stroke": true, "weight": 3}
+            ).addTo(map_6772dbbe4daf428d522aebf7ad12f6eb);
+        
+    
+        var popup_cd226e9ce1bdbc30821dd015ad33d38a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_46ab0f6c317e92f79b4b7e97be90374b = $(`<div id="html_46ab0f6c317e92f79b4b7e97be90374b" style="width: 100.0%; height: 100.0%;"><b>Hadapsar</b><br>Crime Count: 181<br>Zone: <b>Medium Crime</b></div>`)[0];
+                popup_cd226e9ce1bdbc30821dd015ad33d38a.setContent(html_46ab0f6c317e92f79b4b7e97be90374b);
+            
+        
+
+        circle_0d7e9c544a5f68896a71c210819c2e86.bindPopup(popup_cd226e9ce1bdbc30821dd015ad33d38a)
+        ;
+
+        
+    
+    
+            circle_0d7e9c544a5f68896a71c210819c2e86.bindTooltip(
+                `<div>
+                     Hadapsar — Medium Crime
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_08b9f9caa4e6cfcbd06fd6ea7d1b3f1d = L.circle(
+                [18.5642431, 73.7768573],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2520, "stroke": true, "weight": 3}
+            ).addTo(map_6772dbbe4daf428d522aebf7ad12f6eb);
+        
+    
+        var popup_95c99c4213f4483d5dfa137450a2a7c9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_233153774b3b9a9f826866b98c280d84 = $(`<div id="html_233153774b3b9a9f826866b98c280d84" style="width: 100.0%; height: 100.0%;"><b>Baner</b><br>Crime Count: 126<br>Zone: <b>Medium Crime</b></div>`)[0];
+                popup_95c99c4213f4483d5dfa137450a2a7c9.setContent(html_233153774b3b9a9f826866b98c280d84);
+            
+        
+
+        circle_08b9f9caa4e6cfcbd06fd6ea7d1b3f1d.bindPopup(popup_95c99c4213f4483d5dfa137450a2a7c9)
+        ;
+
+        
+    
+    
+            circle_08b9f9caa4e6cfcbd06fd6ea7d1b3f1d.bindTooltip(
+                `<div>
+                     Baner — Medium Crime
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_983cfa3aba8ccc6f43cb88addb88da0b = L.circle(
+                [18.6022495, 73.7644454],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 460, "stroke": true, "weight": 3}
+            ).addTo(map_6772dbbe4daf428d522aebf7ad12f6eb);
+        
+    
+        var popup_e5d2bfe2fd320980d0a12a7746d3cf93 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6d34e48e458f388c48c755b99e86785e = $(`<div id="html_6d34e48e458f388c48c755b99e86785e" style="width: 100.0%; height: 100.0%;"><b>Wakad</b><br>Crime Count: 23<br>Zone: <b>Low Crime</b></div>`)[0];
+                popup_e5d2bfe2fd320980d0a12a7746d3cf93.setContent(html_6d34e48e458f388c48c755b99e86785e);
+            
+        
+
+        circle_983cfa3aba8ccc6f43cb88addb88da0b.bindPopup(popup_e5d2bfe2fd320980d0a12a7746d3cf93)
+        ;
+
+        
+    
+    
+            circle_983cfa3aba8ccc6f43cb88addb88da0b.bindTooltip(
+                `<div>
+                     Wakad — Low Crime
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_dc150b0fc201b1f70308732a737dc975 = L.circle(
+                [18.5703877, 73.9133336],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 460, "stroke": true, "weight": 3}
+            ).addTo(map_6772dbbe4daf428d522aebf7ad12f6eb);
+        
+    
+        var popup_004fe3d5aa09d8e6d708261dbbf5f76f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_de983f81bc8f61ea4b6e93418634969e = $(`<div id="html_de983f81bc8f61ea4b6e93418634969e" style="width: 100.0%; height: 100.0%;"><b>Viman Nagar</b><br>Crime Count: 23<br>Zone: <b>Low Crime</b></div>`)[0];
+                popup_004fe3d5aa09d8e6d708261dbbf5f76f.setContent(html_de983f81bc8f61ea4b6e93418634969e);
+            
+        
+
+        circle_dc150b0fc201b1f70308732a737dc975.bindPopup(popup_004fe3d5aa09d8e6d708261dbbf5f76f)
+        ;
+
+        
+    
+    
+            circle_dc150b0fc201b1f70308732a737dc975.bindTooltip(
+                `<div>
+                     Viman Nagar — Low Crime
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_2d14b27360acc1ab116714a0621f6582 = L.circle(
+                [19.0648276, 72.8253859],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 160, "stroke": true, "weight": 3}
+            ).addTo(map_6772dbbe4daf428d522aebf7ad12f6eb);
+        
+    
+        var popup_0b9b501651ab220ee59297ac467a949a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8073ca1c03cf7623198f10d86515cd10 = $(`<div id="html_8073ca1c03cf7623198f10d86515cd10" style="width: 100.0%; height: 100.0%;"><b>Pune Camp</b><br>Crime Count: 8<br>Zone: <b>Low Crime</b></div>`)[0];
+                popup_0b9b501651ab220ee59297ac467a949a.setContent(html_8073ca1c03cf7623198f10d86515cd10);
+            
+        
+
+        circle_2d14b27360acc1ab116714a0621f6582.bindPopup(popup_0b9b501651ab220ee59297ac467a949a)
+        ;
+
+        
+    
+    
+            circle_2d14b27360acc1ab116714a0621f6582.bindTooltip(
+                `<div>
+                     Pune Camp — Low Crime
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_ec4f60b7610d85ed481d0aad4e828cdf = L.circle(
+                [18.5656319, 73.8865762],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5540, "stroke": true, "weight": 3}
+            ).addTo(map_6772dbbe4daf428d522aebf7ad12f6eb);
+        
+    
+        var popup_bf1095b4a0ff97800a871cd86423d960 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_50bb05b7673fc009b033ae9208dad003 = $(`<div id="html_50bb05b7673fc009b033ae9208dad003" style="width: 100.0%; height: 100.0%;"><b>Yerawada</b><br>Crime Count: 277<br>Zone: <b>Medium Crime</b></div>`)[0];
+                popup_bf1095b4a0ff97800a871cd86423d960.setContent(html_50bb05b7673fc009b033ae9208dad003);
+            
+        
+
+        circle_ec4f60b7610d85ed481d0aad4e828cdf.bindPopup(popup_bf1095b4a0ff97800a871cd86423d960)
+        ;
+
+        
+    
+    
+            circle_ec4f60b7610d85ed481d0aad4e828cdf.bindTooltip(
+                `<div>
+                     Yerawada — Medium Crime
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_500a24f019625a56119ee0beb524a6db = L.circle(
+                [18.6231854, 73.8019932],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2520, "stroke": true, "weight": 3}
+            ).addTo(map_6772dbbe4daf428d522aebf7ad12f6eb);
+        
+    
+        var popup_e0a671babe805c6f245df9b8e8d1cd11 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_40580e45e19b3c1eaf596bef90e88d8e = $(`<div id="html_40580e45e19b3c1eaf596bef90e88d8e" style="width: 100.0%; height: 100.0%;"><b>Pimpri</b><br>Crime Count: 126<br>Zone: <b>Medium Crime</b></div>`)[0];
+                popup_e0a671babe805c6f245df9b8e8d1cd11.setContent(html_40580e45e19b3c1eaf596bef90e88d8e);
+            
+        
+
+        circle_500a24f019625a56119ee0beb524a6db.bindPopup(popup_e0a671babe805c6f245df9b8e8d1cd11)
+        ;
+
+        
+    
+    
+            circle_500a24f019625a56119ee0beb524a6db.bindTooltip(
+                `<div>
+                     Pimpri — Medium Crime
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_b4c7bf37e11bf172010fafbfcafc7f72 = L.circle(
+                [18.6403548, 73.7917128],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3400, "stroke": true, "weight": 3}
+            ).addTo(map_6772dbbe4daf428d522aebf7ad12f6eb);
+        
+    
+        var popup_7ead92fdae416d10da4c42fcaa49df82 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6ac52ad0db0a272c94f5b37b8b86b60d = $(`<div id="html_6ac52ad0db0a272c94f5b37b8b86b60d" style="width: 100.0%; height: 100.0%;"><b>Chinchwad</b><br>Crime Count: 170<br>Zone: <b>Medium Crime</b></div>`)[0];
+                popup_7ead92fdae416d10da4c42fcaa49df82.setContent(html_6ac52ad0db0a272c94f5b37b8b86b60d);
+            
+        
+
+        circle_b4c7bf37e11bf172010fafbfcafc7f72.bindPopup(popup_7ead92fdae416d10da4c42fcaa49df82)
+        ;
+
+        
+    
+    
+            circle_b4c7bf37e11bf172010fafbfcafc7f72.bindTooltip(
+                `<div>
+                     Chinchwad — Medium Crime
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_88d64701337971d05fb5c4ce38911071 = L.circle(
+                [18.4994549, 73.8580866],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 40, "stroke": true, "weight": 3}
+            ).addTo(map_6772dbbe4daf428d522aebf7ad12f6eb);
+        
+    
+        var popup_dff023be51962856fc5f9895dcc67cab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7386a68a23bb7c4bea7100ff400dbfb0 = $(`<div id="html_7386a68a23bb7c4bea7100ff400dbfb0" style="width: 100.0%; height: 100.0%;"><b>Swargate</b><br>Crime Count: 2<br>Zone: <b>Low Crime</b></div>`)[0];
+                popup_dff023be51962856fc5f9895dcc67cab.setContent(html_7386a68a23bb7c4bea7100ff400dbfb0);
+            
+        
+
+        circle_88d64701337971d05fb5c4ce38911071.bindPopup(popup_dff023be51962856fc5f9895dcc67cab)
+        ;
+
+        
+    
+    
+            circle_88d64701337971d05fb5c4ce38911071.bindTooltip(
+                `<div>
+                     Swargate — Low Crime
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_d5b46c918d925b0393a39845d6ffd091 = L.circle(
+                [18.548889, 73.8748641],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9660, "stroke": true, "weight": 3}
+            ).addTo(map_6772dbbe4daf428d522aebf7ad12f6eb);
+        
+    
+        var popup_54ba02b4bbaf6ec0ebed21bd363414d8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f1937d4c031be03a545d81a8577a4a28 = $(`<div id="html_f1937d4c031be03a545d81a8577a4a28" style="width: 100.0%; height: 100.0%;"><b>Deccan</b><br>Crime Count: 483<br>Zone: <b>High Crime</b></div>`)[0];
+                popup_54ba02b4bbaf6ec0ebed21bd363414d8.setContent(html_f1937d4c031be03a545d81a8577a4a28);
+            
+        
+
+        circle_d5b46c918d925b0393a39845d6ffd091.bindPopup(popup_54ba02b4bbaf6ec0ebed21bd363414d8)
+        ;
+
+        
+    
+    
+            circle_d5b46c918d925b0393a39845d6ffd091.bindTooltip(
+                `<div>
+                     Deccan — High Crime
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_3539665470677c047bc482f96dfde815 = L.circle(
+                [18.5618834, 73.8101957],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4920, "stroke": true, "weight": 3}
+            ).addTo(map_6772dbbe4daf428d522aebf7ad12f6eb);
+        
+    
+        var popup_c1c8b3991878b6e763c606bc1aa04082 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c6902149be637539125dd59ef4525e66 = $(`<div id="html_c6902149be637539125dd59ef4525e66" style="width: 100.0%; height: 100.0%;"><b>Aundh</b><br>Crime Count: 246<br>Zone: <b>Medium Crime</b></div>`)[0];
+                popup_c1c8b3991878b6e763c606bc1aa04082.setContent(html_c6902149be637539125dd59ef4525e66);
+            
+        
+
+        circle_3539665470677c047bc482f96dfde815.bindPopup(popup_c1c8b3991878b6e763c606bc1aa04082)
+        ;
+
+        
+    
+    
+            circle_3539665470677c047bc482f96dfde815.bindTooltip(
+                `<div>
+                     Aundh — Medium Crime
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_b786a7031e129a7e2393c0b4495f31ea = L.circle(
+                [18.4779905, 73.8940627],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 640, "stroke": true, "weight": 3}
+            ).addTo(map_6772dbbe4daf428d522aebf7ad12f6eb);
+        
+    
+        var popup_adcc0deb07a16d6ea9b52df9acffe0f2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a47703559993214f13f4df308ec4c25b = $(`<div id="html_a47703559993214f13f4df308ec4c25b" style="width: 100.0%; height: 100.0%;"><b>Kondhwa</b><br>Crime Count: 32<br>Zone: <b>Low Crime</b></div>`)[0];
+                popup_adcc0deb07a16d6ea9b52df9acffe0f2.setContent(html_a47703559993214f13f4df308ec4c25b);
+            
+        
+
+        circle_b786a7031e129a7e2393c0b4495f31ea.bindPopup(popup_adcc0deb07a16d6ea9b52df9acffe0f2)
+        ;
+
+        
+    
+    
+            circle_b786a7031e129a7e2393c0b4495f31ea.bindTooltip(
+                `<div>
+                     Kondhwa — Low Crime
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_4505e41673f8666201b00dc30c02a1e7 = L.circle(
+                [18.4536792, 73.8563196],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 540, "stroke": true, "weight": 3}
+            ).addTo(map_6772dbbe4daf428d522aebf7ad12f6eb);
+        
+    
+        var popup_cd8cf2164608dce3991e8509e0795ee5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_02528e2f25306db53f96759c1074d82e = $(`<div id="html_02528e2f25306db53f96759c1074d82e" style="width: 100.0%; height: 100.0%;"><b>Katraj</b><br>Crime Count: 27<br>Zone: <b>Low Crime</b></div>`)[0];
+                popup_cd8cf2164608dce3991e8509e0795ee5.setContent(html_02528e2f25306db53f96759c1074d82e);
+            
+        
+
+        circle_4505e41673f8666201b00dc30c02a1e7.bindPopup(popup_cd8cf2164608dce3991e8509e0795ee5)
+        ;
+
+        
+    
+    
+            circle_4505e41673f8666201b00dc30c02a1e7.bindTooltip(
+                `<div>
+                     Katraj — Low Crime
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var heat_map_01434fc8a7b84de81f76a99865b28cf0 = L.heatLayer(
+                [[18.5325915, 73.8513115, 64], [18.5071358, 73.8050987, 415], [18.5007741, 73.9379146, 181], [18.5642431, 73.7768573, 126], [18.6022495, 73.7644454, 23], [18.5703877, 73.9133336, 23], [19.0648276, 72.8253859, 8], [18.5656319, 73.8865762, 277], [18.6231854, 73.8019932, 126], [18.6403548, 73.7917128, 170], [18.4994549, 73.8580866, 2], [18.548889, 73.8748641, 483], [18.5618834, 73.8101957, 246], [18.4779905, 73.8940627, 32], [18.4536792, 73.8563196, 27]],
+                {
+  "minOpacity": 0.3,
+  "maxZoom": 18,
+  "radius": 25,
+  "blur": 15,
+}
+            );
+        
+    
+            heat_map_01434fc8a7b84de81f76a99865b28cf0.addTo(map_6772dbbe4daf428d522aebf7ad12f6eb);
+        
+</script>
+</html>
